@@ -49,9 +49,7 @@ class YoutubeController extends Controller
 			}
 		
 		} while(!empty($pageToken));
-
-		var_dump($items);
-
+		
 		return view('playlist', compact('items'));
     }
 }
