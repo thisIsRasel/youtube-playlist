@@ -9,14 +9,13 @@
 
                 <div class="panel-body">
 
-                    {{ Form::open(['method'=>'POST', 'url'=>'playlist']) }}
+                    <h2>Total Result : {{ count($items) }}</h2>
 
-                        <input type="text" class="form-control" name="youtube_url" placeholder="Playlist url"/>
-                        <br/>
-                        <input type="submit" class="btn btn-primary" value="Get playlist" />
-
-                    {{ Form::close() }}
-
+                    <ul>
+                    @foreach($items as $playlist) 
+                        <li>{{ $playlist->snippet->title }} ({{ $playlist->snippet->resourceId->videoId }})</li>
+                    @endforeach
+                    </ul>
                 </div>
             </div>
         </div>
